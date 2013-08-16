@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="scjug.example"/>
+
+    <util:list id="catalogs" value-type="scjug.example.Catalog">
+        <bean class="scjug.example.Catalog">
+            <property name="name" value="BabyToys"/>
+        </bean>
+        <bean class="scjug.example.Catalog">
+            <property name="name" value="KidsToys"/>
+        </bean>
+    </util:list>
+
+    <util:list id="warehouses" value-type="scjug.example.Warehouse">
+        <bean class="scjug.example.Warehouse">
+            <property name="name" value="Atlanta"/>
+        </bean>
+        <bean class="scjug.example.Warehouse">
+            <property name="name" value="Chicago"/>
+        </bean>
+    </util:list>
+</beans>
